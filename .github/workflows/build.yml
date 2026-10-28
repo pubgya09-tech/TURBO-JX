@@ -28,6 +28,8 @@ jobs:
       run: |
         export PATH=$PATH:~/.local/bin
         export TERM=xterm
+        export ACLOCAL_PATH=/usr/share/aclocal
+        export LIBTOOLIZE=libtoolize
         # Qurishni boshlash:
         buildozer -v android debug
 
