@@ -28,12 +28,6 @@ jobs:
       run: |
         export PATH=$PATH:~/.local/bin
         export TERM=xterm
-        export ACLOCAL_PATH=/usr/share/aclocal
-        export LIBTOOLIZE=libtoolize
-        # MUHIM QATORLAR: libtool va autoconf ni majburan yangilash
-        sudo apt-get install -y autoconf automake libtool libtool-bin
-        sudo ln -sf /usr/bin/libtoolize /usr/bin/glibtoolize || true
-        
         buildozer -v android debug
 
     - name: Upload APK
