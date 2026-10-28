@@ -27,7 +27,6 @@ jobs:
     - name: Build with Buildozer
       run: |
         export PATH=$PATH:~/.local/bin
-        # Terminal muammosini hal qiluvchi qator:
         export TERM=xterm
         # Qurishni boshlash:
         buildozer -v android debug
