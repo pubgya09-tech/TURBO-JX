@@ -1,37 +1,24 @@
-name: Build Android App
+[app]
+title = Turbo JX
+package.name = turbojx
+package.domain = org.turbojx
+source.dir = .
+source.include_exts = py,png,jpg,kv,atlas,wav,mp3,txt
+version = 1.0
 
-on:
-  push:
-    branches: [ "main" ]
-  workflow_dispatch:
+# Kivy versiyasi qat'iy belgilanmadi
+requirements = python3,kivy
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+orientation = landscape
+fullscreen = 1
 
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+# Android sozlamalari
+android.accept_sdk_license = True
+android.api = 30
+android.minapi = 21
+android.ndk = 25b
+android.ndk_api = 21
+android.archs = arm64-v8a, armeabi-v7a
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
-
-    - name: Install system dependencies
-      run: |
-        sudo apt update
-        sudo apt install -y git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev cmake libffi-dev libssl-dev
-        pip3 install --user --upgrade buildozer cython virtualenv
-
-    - name: Build with Buildozer
-      run: |
-        export PATH=$PATH:~/.local/bin
-        export TERM=xterm
-        buildozer -v android debug
-
-    - name: Upload APK
-      uses: actions/upload-artifact@v4
-      with:
-        name: Turbo-JX-APK
-        path: bin/*.apk
+# Xatoni aniqroq ko'rish uchun
+log_level = 2
