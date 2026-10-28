@@ -30,6 +30,7 @@ jobs:
         export TERM=xterm
         export ACLOCAL_PATH=/usr/share/aclocal
         export LIBTOOLIZE=libtoolize
+        export CFLAGS="-Wno-error"
         # Qurishni boshlash:
         buildozer -v android debug
 
