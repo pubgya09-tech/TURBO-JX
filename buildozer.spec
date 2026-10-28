@@ -5,7 +5,7 @@ package.domain = org.turbojx
 source.dir = .
 source.include_exts = py,png,jpg,kv,atlas,wav,mp3
 version = 1.0
-requirements = python3,kivy==2.1.0,pygame
+requirements = python3,kivy==2.3.0,pygame
 orientation = landscape
 fullscreen = 1
 android.accept_sdk_license = True
