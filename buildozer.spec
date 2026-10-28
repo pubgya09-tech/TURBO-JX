@@ -22,3 +22,4 @@ android.archs = arm64-v8a, armeabi-v7a
 
 # Qurish paytida xatoni aniqroq ko'rish uchun
 log_level = 2
+p4a.branch = develop
