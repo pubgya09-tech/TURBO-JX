@@ -27,11 +27,13 @@ jobs:
     - name: Build with Buildozer
       run: |
         export PATH=$PATH:~/.local/bin
-        # Ekranda xatoni to'liqroq ko'rish uchun -v (verbose) qo'shildi
+        # Terminal muammosini hal qiluvchi qator:
+        export TERM=xterm
+        # Qurishni boshlash:
         buildozer -v android debug
 
-    - name: Upload Artifact
+    - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
-        name: Mening-Oyinim-APK
+        name: Turbo-JX-APK
         path: bin/*.apk
