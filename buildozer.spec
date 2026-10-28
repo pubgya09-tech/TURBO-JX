@@ -11,6 +11,6 @@ fullscreen = 1
 android.accept_sdk_license = True
 android.api = 30
 android.minapi = 21
-android.ndk = 23b
+android.ndk = 25b
 android.ndk_api = 21
 p4a.branch = develop
