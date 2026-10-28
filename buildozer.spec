@@ -7,7 +7,7 @@ source.include_exts = py,png,jpg,kv,atlas,wav,mp3,txt
 version = 1.0
 
 # Kivy versiyasi qat'iy belgilanmadi (tizim o'zi mosini topadi)
-requirements = python3,kivy
+requirements = python3,kivy,libffi
 
 orientation = landscape
 fullscreen = 1
