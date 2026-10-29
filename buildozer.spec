@@ -19,3 +19,4 @@ android.ndk_api = 21
 android.archs = arm64-v8a, armeabi-v7a
 
 log_level = 2
+p4a.branch = develop
