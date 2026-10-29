@@ -9,13 +9,12 @@ workflows:
     scripts:
       - name: Install dependencies
         script: |
-          sudo apt update
-          sudo apt install -y git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev cmake libffi-dev libssl-dev
-          pip3 install --user --upgrade buildozer cython virtualenv
+          brew install python@3.10 openjdk@17
+          pip3 install --upgrade buildozer cython virtualenv
       - name: Build with Buildozer
         script: |
-          export PATH=$PATH:~/.local/bin
-          export TERM=xterm
+          export PATH=$PATH:~/Library/Python/3.10/bin
+          export JAVA_HOME=$(/usr/libexec/java_home -v 17)
           buildozer -v android debug
     artifacts:
       - bin/*.apk
