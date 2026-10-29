@@ -4,7 +4,8 @@ workflows:
     max_build_duration: 120
     instance_type: linux
     environment:
-      python: 3.10
+      groups:
+        - default
     scripts:
       - name: Install dependencies
         script: |
