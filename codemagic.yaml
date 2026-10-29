@@ -10,11 +10,17 @@ workflows:
       - name: Install dependencies
         script: |
           brew install python@3.10 openjdk@17
-          pip3 install --upgrade buildozer cython virtualenv
+          pip3 install --user --upgrade buildozer cython virtualenv
+      - name: Force P4A Version
+        script: |
+          # Buildozer xohlagan python-for-android versiyasini majburan o'rnatamiz
+          export PATH=$PATH:~/Library/Python/3.10/bin
+          pip3 install --user git+https://github.com/kivy/python-for-android.git@develop
       - name: Build with Buildozer
         script: |
           export PATH=$PATH:~/Library/Python/3.10/bin
           export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+          # Buildozerni ishga tushirish
           buildozer -v android debug
     artifacts:
       - bin/*.apk
